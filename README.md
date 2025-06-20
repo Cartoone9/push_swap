@@ -43,12 +43,10 @@ With the checker:
 ## Performances
 
 In order to get the highest grade you had to be under those thresholds:
-```markdown
 - 3 numbers: 2 instructions
 - 5 numbers: 12 instructions
 - 100 numbers: 700 instructions
 - 500 numbers: 5500 instructions
-```
 
 To test that I used the project 'complexity' from [SimonCROS/push_swap_tester](https://github.com/SimonCROS/push_swap_tester) which gives me these results:  
 
