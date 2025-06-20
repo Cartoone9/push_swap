@@ -50,7 +50,7 @@ In order to get the highest grade you had to be under those thresholds:
 
 To test that I used the project 'complexity' from [SimonCROS/push_swap_tester](https://github.com/SimonCROS/push_swap_tester) which gives me these results:  
 
-**For 3 random numbers:**
+**🟢 For 3 random numbers:**
 ```Bash
 3 elements, 1000 iterations (seed 1007942458)
 
@@ -63,7 +63,7 @@ Precision = 100 % OK (0 KO)
 100 % effective
 ```
 
-**For 5 random numbers:**
+**🟢 For 5 random numbers:**
 ```Bash
 5 elements, 1000 iterations (seed 1003452724)
 
@@ -76,7 +76,7 @@ Precision = 100 % OK (0 KO)
 100 % effective
 ```
 
-**For 100 random numbers:**
+**🟢 For 100 random numbers:**
 ```Bash
 100 elements, 1000 iterations (seed 2765038762)
 
@@ -89,7 +89,7 @@ Precision = 100 % OK (0 KO)
 100 % effective
 ```
 
-**For 500 random numbers:**
+**🟢 For 500 random numbers:**
 ```Bash
 500 elements, 1000 iterations (seed 2321868039)
 
