@@ -3,34 +3,42 @@
 </div>
 
 # push_swap
-  
 
-## Important functions
-
+ This is my push_swap project, a challenging algorithm assignment from 42 School. The core objective was to sort a stack of integers using a limited set of operations, manipulating only two stacks (A and B). This project served as an introduction to sorting algorithms, data structures, and optimization techniques, with the goal of finding the most efficient sorting solution using the fewest operations possible. 
 
 ## Usage
 
 To compile the program, navigate to the project root and run:
 ```Bash
 make
-# or
-make bonus
 ```
 
 Then you can use the program like this:
 
 ```Bash
-
+./push_swap 2 1 3 6 5 8
 ```
 
-Or like this to check results:
+To compile the bonus (checker), navigate to the project root and run:
+```Bash
+make bonus
+```
+
+Then you can check the program output like this:
 
 ```Bash
-
+./push_swap 2 1 3 6 5 8 | ./checker 2 1 3 6 5 8
+# or
+ARG="2 1 3 6 5 8"; ./push_swap $ARG | ./checker $ARG
 ```
 
 ## Examples
 
+Without the checker:  
+![Push_swap example](https://i.ibb.co/Kp8PrghR/image.png)  
+
+With the checker:  
+![Push_swap and checker example](https://i.ibb.co/bjqX2nSg/image.png)  
 
 ## Note on Project State
 
@@ -38,6 +46,98 @@ All projects from my 42 cursus are preserved in their state immediately followin
 
 ## Notable errors
 
+```Bash
+./push_swap 2147483649
+```
+
+If you try to use the program with a single value, and that value is above the maximum of an int (or under the minimum) it will return no error message, even tho it won't do anything.  
+
+The problem stems from the main function:
+```C
+int	main(int ac, char **av)
+{
+	char	**numbers;
+	t_list	*list_a;
+	size_t	la_size;
+
+	if (ac >= 2)
+	{
+		numbers = ft_split_ncheck(av);
+		if (!numbers)
+			return (write(2, "Error\n", 6), 1);
+
+        // HERE
+		if (ft_numbers_size(numbers) <= 1)
+			return (ft_free_strr(numbers), 0);
+
+...
+```
+
+Here the program will return if there's only a single value that is given as argument.  
+Instead we should do something like this:
+```C
+int	main(int ac, char **av)
+{
+	char	**numbers;
+	size_t	numbers_len; // ADDED VARIABLE
+	t_list	*list_a;
+	size_t	la_size;
+
+	if (ac >= 2)
+	{
+		numbers = ft_split_ncheck(av);
+		if (!numbers)
+			return (write(2, "Error\n", 6), 1);
+
+        // EDIT BEGIN
+		number_len = ft_numbers_size(numbers);
+		if (number_len <= 1)
+		{
+			if (number_len == 1)
+			{
+				if (ft_check_single_value(numbers[0]))
+					write(2, "push_swap: invalid arg\n", 23);
+			}
+			return (ft_free_strr(numbers), 0);
+        // EDIT END
+
+
+```
+
+With a new function ft_check_single_value to check if the value given is in the range of an int:
+```C
+int ft_check_single_value(const char *str)
+{
+	long	num;
+	int		sign;
+	int		i;
+
+	if (!str || !*str)
+		return (1);
+	i = 0;
+	sign = 1;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	if (!str[i])
+		return (1);
+	num = 0;
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (1);
+		num = num * 10 + (str[i] - '0');
+		if ((sign == 1 && num > 2147483647)
+            || (sign == -1 && -num < -2147483648))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+```
 
 ## License
 
