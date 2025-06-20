@@ -40,6 +40,70 @@ Without the checker:
 With the checker:  
 ![Push_swap and checker example](https://i.ibb.co/bjqX2nSg/image.png)  
 
+## Performances
+
+In order to get the highest grade you had to be under those thresholds:
+```markdown
+- 3 numbers: 2 instructions
+- 5 numbers: 12 instructions
+- 100 numbers: 700 instructions
+- 500 numbers: 5500 instructions
+```
+
+To test that I used the project 'complexity' from [SimonCROS/push_swap_tester](https://github.com/SimonCROS/push_swap_tester) which gives me these results:  
+
+**For 3 random numbers:**
+```Bash
+3 elements, 1000 iterations (seed 1007942458)
+
+Worst = 2 instructions
+Median = 1 instructions
+Best = 0 instructions
+Std. deviation = 0.7 instructions
+Objective = 100 % under 2 (0 above)   
+Precision = 100 % OK (0 KO)   
+100 % effective
+```
+
+**For 5 random numbers:**
+```Bash
+5 elements, 1000 iterations (seed 1003452724)
+
+Worst = 11 instructions
+Median = 8 instructions
+Best = 0 instructions
+Std. deviation = 1.5 instructions
+Objective = 100 % under 12 (0 above)   
+Precision = 100 % OK (0 KO)   
+100 % effective
+```
+
+**For 100 random numbers:**
+```Bash
+100 elements, 1000 iterations (seed 2765038762)
+
+Worst = 656 instructions
+Median = 589 instructions
+Best = 508 instructions
+Std. deviation = 24.4 instructions
+Objective = 100 % under 700 (0 above)   
+Precision = 100 % OK (0 KO)   
+100 % effective
+```
+
+**For 500 random numbers:**
+```Bash
+500 elements, 1000 iterations (seed 2321868039)
+
+Worst = 5078 instructions
+Median = 4735 instructions
+Best = 4295 instructions
+Std. deviation = 131.0 instructions
+Objective = 100 % under 5500 (0 above)   
+Precision = 100 % OK (0 KO)   
+100 % effective
+```
+
 ## Note on Project State
 
 All projects from my 42 cursus are preserved in their state immediately following their final evaluation. While they may contain mistakes or stylistic errors, I've chosen not to alter them. This approach provides a clear and authentic timeline of my progress and learning journey as a programmer.
