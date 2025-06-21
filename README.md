@@ -112,7 +112,7 @@ To better visualize the program's behavior, I used the 'push_swap_visualizer' pr
 ![Visualizer for 100 values](https://i.ibb.co/whg7VTjh/push-swap-1-clean.gif)  
 
 - For 500 random numbers:  
-![Visualizer for 500 values](https://i.ibb.co/r2x7zvNC/push-swap-2.gif)   
+![Visualizer for 500 values](https://i.ibb.co/Rpj5Cr8q/push-swap-2-clean.gif)   
 
 ## Note on Project State
 
