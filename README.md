@@ -36,7 +36,7 @@ ARG="2 1 3 6 5 8"; ./push_swap $ARG | ./checker $ARG
 
 Without the checker:  
 
-![Push_swap example](https://i.ibb.co/Kp8PrghR/image.png)  
+![Push_swap example](https://i.ibb.co/4RDJk5Zt/push-swap-1.gif)  
   
 With the checker:  
 
