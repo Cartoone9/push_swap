@@ -38,7 +38,7 @@ Without the checker:
 ![Push_swap example](https://i.ibb.co/Kp8PrghR/image.png)  
 
 With the checker:  
-![Push_swap and checker example](https://i.ibb.co/bjqX2nSg/image.png)  
+![Push_swap and checker example](https://i.ibb.co/r2x7zvNC/push-swap-2.gif)  
 
 ## Performances
 
