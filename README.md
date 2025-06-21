@@ -109,7 +109,7 @@ Precision = 100 % OK (0 KO)
 To better visualize the program's behavior, I used the 'push_swap_visualizer' project from [o-reo/push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer):  
 
 - For 100 random numbers:  
-![Visualizer for 100 values](https://i.ibb.co/4RDJk5Zt/push-swap-1.gif)  
+![Visualizer for 100 values](https://i.ibb.co/whg7VTjh/push-swap-1-clean.gif)  
 
 - For 500 random numbers:  
 ![Visualizer for 500 values](https://i.ibb.co/r2x7zvNC/push-swap-2.gif)   
