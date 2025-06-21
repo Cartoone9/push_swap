@@ -48,7 +48,7 @@ In order to get the highest grade you had to be under those thresholds:
 - 100 numbers: 700 instructions
 - 500 numbers: 5500 instructions
 
-To test that I used the project 'complexity' from [SimonCROS/push_swap_tester](https://github.com/SimonCROS/push_swap_tester) which gives me these results:  
+To test my program I used the project 'complexity' from [SimonCROS/push_swap_tester](https://github.com/SimonCROS/push_swap_tester) which gives me these results:  
 
 **✅ For 3 random numbers:**
 ```Bash
@@ -101,6 +101,16 @@ Objective = 100 % under 5500 (0 above)
 Precision = 100 % OK (0 KO)   
 100 % effective
 ```
+
+## Visualizer
+
+To better visualize the program's behavior, I used the 'push_swap_visualizer' project from [o-reo/push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer):  
+
+- For 100 random numbers:
+![Visualizer for 100 values](https://i.ibb.co/b51r3cYr/push-swap-1.gif)  
+
+- For 500 random numbers:
+![Visualizer for 500 values](https://i.ibb.co/fYJdHwzT/push-swap-2.gif)   
 
 ## Note on Project State
 
