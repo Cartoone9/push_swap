@@ -147,7 +147,7 @@ int	main(int ac, char **av)
 ...
 ```
 
-Here the program will return if there's only a single value that is given as argument.  
+Here the program will return if there's only a single value that is passed as argument.  
 Instead we should do something like this:
 ```C
 int	main(int ac, char **av)
@@ -178,13 +178,13 @@ int	main(int ac, char **av)
 
 ```
 
-With a new function ft_check_single_value to check if the value given is in the range of an int:
+With a new function ft_check_single_value to check if the given value is in the range of an int:
 ```C
 int ft_check_single_value(const char *str)
 {
-	long	num;
-	int		sign;
-	int		i;
+	long long   num;
+	int         sign;
+	int         i;
 
 	if (!str || !*str)
 		return (1);
