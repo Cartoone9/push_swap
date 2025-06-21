@@ -213,6 +213,8 @@ int ft_check_single_value(const char *str)
 }
 ```
 
+There's also an unprotected malloc in my get_next_line function ft_fill_stash.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)  
