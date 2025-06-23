@@ -187,7 +187,7 @@ int ft_check_single_value(const char *str)
 			return (1);
 		num = num * 10 + (str[i] - '0');
 		if ((sign == 1 && num > 2147483647)
-            || (sign == -1 && -num < -2147483648))
+			|| (sign == -1 && -num < -2147483648))
 			return (1);
 		i++;
 	}
