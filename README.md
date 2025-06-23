@@ -16,6 +16,10 @@ make
 Then you can use the program like this:
 ```bash
 ./push_swap 2 1 3 6 5 8
+# or
+./push_swap "2 1 3 6 5 8"
+# or
+./push_swap "2 1 3" 6 5 "8"
 ```
 
 To compile the bonus (checker), navigate to the project root and run:
