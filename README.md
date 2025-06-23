@@ -126,11 +126,11 @@ All projects from my 42 cursus are preserved in their state immediately followin
 ./push_swap 2147483649
 ```
 
-If you try to use the program with a single value, and that value is above the maximum of an int (or under the minimum) it will return no error message, instead it will just end the execution.  
+If you try to use the program with a single value, and that value is above the maximum of an int (or under the minimum) it will return no error message, and just end the execution.  
 
 The problem stems from the main function, where the program will return if there's only a single value that is passed as argument.  
 
-Instead, you could do something like this:
+In order to fix that behavior, you could do something like this:
 ```diff
 int	main(int ac, char **av)
 {
