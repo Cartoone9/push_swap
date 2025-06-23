@@ -9,24 +9,22 @@
 ## Usage
 
 To compile the program, navigate to the project root and run:
-```Bash
+```bash
 make
 ```
 
 Then you can use the program like this:
-
-```Bash
+```bash
 ./push_swap 2 1 3 6 5 8
 ```
 
 To compile the bonus (checker), navigate to the project root and run:
-```Bash
+```bash
 make bonus
 ```
 
 Then you can check the program output like this:
-
-```Bash
+```bash
 ./push_swap 2 1 3 6 5 8 | ./checker 2 1 3 6 5 8
 # or
 ARG="2 1 3 6 5 8"; ./push_swap $ARG | ./checker $ARG
@@ -35,25 +33,25 @@ ARG="2 1 3 6 5 8"; ./push_swap $ARG | ./checker $ARG
 ## Examples
 
 Without the checker:  
-
 ![Push_swap example](https://i.ibb.co/Kp8PrghR/image.png)  
   
 With the checker:  
-
 ![Push_swap and checker example](https://i.ibb.co/bjqX2nSg/image.png)  
 
 ## Performances
 
-In order to get the highest grade you had to be under those thresholds:
+In order to get the highest grade you had to be under those thresholds:  
+```markdown
 - 3 numbers: 2 instructions
 - 5 numbers: 12 instructions
 - 100 numbers: 700 instructions
 - 500 numbers: 5500 instructions
+```
 
-To test my program I used the project 'complexity' made by [SimonCROS](https://github.com/SimonCROS/push_swap_tester), which gives me these results:  
+To test my program I used the project `complexity` made by [SimonCROS](https://github.com/SimonCROS/push_swap_tester), which gives me these results:  
 
 **✅ For 3 random numbers:**
-```Bash
+```bash
 3 elements, 1000 iterations (seed 1007942458)
 
 Worst = 2 instructions
@@ -66,7 +64,7 @@ Precision = 100 % OK (0 KO)
 ```
 
 **✅ For 5 random numbers:**
-```Bash
+```bash
 5 elements, 1000 iterations (seed 1003452724)
 
 Worst = 11 instructions
@@ -79,7 +77,7 @@ Precision = 100 % OK (0 KO)
 ```
 
 **✅ For 100 random numbers:**
-```Bash
+```bash
 100 elements, 1000 iterations (seed 2765038762)
 
 Worst = 656 instructions
@@ -92,7 +90,7 @@ Precision = 100 % OK (0 KO)
 ```
 
 **✅ For 500 random numbers:**
-```Bash
+```bash
 500 elements, 1000 iterations (seed 2321868039)
 
 Worst = 5078 instructions
@@ -106,7 +104,7 @@ Precision = 100 % OK (0 KO)
 
 ## Visualizer
 
-To better visualize the program's behavior, I used the 'push_swap_visualizer' project made by [o-reo](https://github.com/o-reo/push_swap_visualizer):  
+To better visualize the program's behavior, I used the `push_swap_visualizer` project made by [o-reo](https://github.com/o-reo/push_swap_visualizer):  
 
 - For 100 random numbers:  
 ![Visualizer for 100 values](https://i.ibb.co/whg7VTjh/push-swap-1-clean.gif)  
@@ -118,13 +116,13 @@ To better visualize the program's behavior, I used the 'push_swap_visualizer' pr
 
 All projects from my 42 cursus are preserved in their state immediately following their final evaluation. While they may contain mistakes or stylistic errors, I've chosen not to alter them. This approach provides a clear and authentic timeline of my progress and learning journey as a programmer.
 
-## Notable errors
+## Known Issues & Fix Suggestions
 
-```Bash
+```bash
 ./push_swap 2147483649
 ```
 
-If you try to use the program with a single value, and that value is above the maximum of an int (or under the minimum) it will return no error message, even tho it won't do anything.  
+If you try to use the program with a single value, and that value is above the maximum of an int (or under the minimum) it will return no error message, instead it will just end the execution.  
 
 The problem stems from the main function:
 ```C
@@ -178,7 +176,7 @@ int	main(int ac, char **av)
 
 ```
 
-With a new function ft_check_single_value to check if the given value is in the range of an int:
+With a new function `ft_check_single_value()` to check if the given value is in the range of an int:
 ```C
 int ft_check_single_value(const char *str)
 {
@@ -213,7 +211,7 @@ int ft_check_single_value(const char *str)
 }
 ```
 
-There's also an unprotected malloc in my get_next_line function ft_fill_stash.
+`ft_fill_stash()` in my get_next_line implementation contains an unprotected `malloc()` that could cause issues in edge cases.
 
 ## License
 
