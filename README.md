@@ -128,8 +128,9 @@ All projects from my 42 cursus are preserved in their state immediately followin
 
 If you try to use the program with a single value, and that value is above the maximum of an int (or under the minimum) it will return no error message, instead it will just end the execution.  
 
-The problem stems from the main function:
-```C
+The problem stems from the main function, where the program will return if there's only a single value that is passed as argument.  
+Instead, you could do something like this:
+```diff
 int	main(int ac, char **av)
 {
 	char	**numbers;
@@ -142,42 +143,20 @@ int	main(int ac, char **av)
 		if (!numbers)
 			return (write(2, "Error\n", 6), 1);
 
-        // HERE
-		if (ft_numbers_size(numbers) <= 1)
-			return (ft_free_strr(numbers), 0);
+-		if (ft_numbers_size(numbers) <= 1)
+-			return (ft_free_strr(numbers), 0);
+
++		number_len = ft_numbers_size(numbers);
++		if (number_len <= 1)
++		{
++			if (number_len == 1)
++			{
++				if (ft_check_single_value(numbers[0]))
++					write(2, "push_swap: invalid arg\n", 23);
++			}
++			return (ft_free_strr(numbers), 0);
 
 ...
-```
-
-Here the program will return if there's only a single value that is passed as argument.  
-Instead we should do something like this:
-```C
-int	main(int ac, char **av)
-{
-	char	**numbers;
-	size_t	numbers_len; // ADDED VARIABLE
-	t_list	*list_a;
-	size_t	la_size;
-
-	if (ac >= 2)
-	{
-		numbers = ft_split_ncheck(av);
-		if (!numbers)
-			return (write(2, "Error\n", 6), 1);
-
-        // EDIT BEGIN
-		number_len = ft_numbers_size(numbers);
-		if (number_len <= 1)
-		{
-			if (number_len == 1)
-			{
-				if (ft_check_single_value(numbers[0]))
-					write(2, "push_swap: invalid arg\n", 23);
-			}
-			return (ft_free_strr(numbers), 0);
-        // EDIT END
-
-
 ```
 
 With a new function `ft_check_single_value()` to check if the given value is in the range of an int:
