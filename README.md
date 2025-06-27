@@ -6,6 +6,16 @@
 
  This is my push_swap project, a challenging algorithm assignment from 42 School. The core objective was to sort a stack of integers using a limited set of operations, manipulating only two stacks (A and B). This project served as an introduction to sorting algorithms, data structures, and optimization techniques, with the goal of finding the most efficient sorting solution using the fewest operations possible. 
 
+## Table of Contents
+
+- [About](#push_swap)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Visualizer](#visualizer)
+- [Note on Project State](#note-on-project-state)
+- [Known Issues & Fix Suggestions](#known-issues--fix-suggestions)
+- [License](#license)
+
 ## Usage
 
 To compile the program, navigate to the project root and run:
