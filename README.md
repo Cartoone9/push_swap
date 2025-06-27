@@ -11,6 +11,7 @@
 - [About](#push_swap)
 - [Usage](#usage)
 - [Examples](#examples)
+- [Performances](#performances)
 - [Visualizer](#visualizer)
 - [Note on Project State](#note-on-project-state)
 - [Known Issues & Fix Suggestions](#known-issues--fix-suggestions)
